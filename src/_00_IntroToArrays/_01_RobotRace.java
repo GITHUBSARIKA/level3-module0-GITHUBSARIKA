@@ -14,13 +14,19 @@ Robot[] robots=new Robot[5];
 		//3. use a for loop to initialize the robots.
 for (int i = 0; i < robots.length; i++) {
 	robots[i]= new Robot((i*100)+275, 400);
-	
+	robots[i].setSpeed(10);
 }
 			//4. make each robot start at the bottom of the screen, side by side, facing up
-
+boolean race=false;
+        while(race==false) {
+        	
 	for (int i = 0; i < robots.length; i++) {
 		robots[i].move(new Random().nextInt(50));
-		while(robots[i].getY()>0) {
+		if (robots[i].getY()<=0) {
+			race=true;
+			JOptionPane.showMessageDialog(null,  "Robot #" + i +"wins!Let's throw the robot an party");
+			
+		}
 		
 	}
 	}
