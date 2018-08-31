@@ -46,13 +46,24 @@ public class MoreArrayFun {
 	// in a completely random order. Almost every run of the program should result
 	// in a different order.
 	void strrrrrings(String[] array) {
-		String[] check;
-		for (int i = 0; i < array.length; i ++) {
-			Random random=new Random();
-			int num=random.nextInt(array.length);
-			System.out.println(array[num]);
-			
+		String[] check = new String[array.length];
+		int howmanywords = 0;
+		while (howmanywords < check.length) {
+			Random random = new Random();
+			int num = random.nextInt(array.length);
+			boolean hasBeenPrinted=false;
+			for (int i = 0; i < check.length; i++) {
+				if (array[num] == check[i]) {
+                 hasBeenPrinted=true;
+				
+			}
 		}
+			if (hasBeenPrinted==false) {
+				check[howmanywords]=array[num];
+				System.out.println(array[num]);
+				howmanywords++;
+			}
+
 	}
 
-}
+}}
